@@ -27,7 +27,32 @@ namespace Program
             // visitar el árbol aquí
             SumVisitor visitor = new SumVisitor();
             n1.Accept(visitor);
-            Console.WriteLine(visitor.Sum);
+            Console.WriteLine($"Suma de nodos: {visitor.Sum}");
+            
+            Person p1 = new Person(73, "Pedro");
+            Person p2 = new Person(41, "Claudia");
+            Person p3 = new Person(37, "Juan");
+            Person p4 = new Person(10, "Pedro Junior");
+            Person p5 = new Person(7, "Juana");
+            Person p6 = new Person(9, "Ana");
+            Person p7 = new Person(4, "Martina");
+
+            p1.AddChildren(p2);
+            p1.AddChildren(p3);
+
+            p2.AddChildren(p4);
+            p2.AddChildren(p5);
+
+            p3.AddChildren(p6);
+            p3.AddChildren(p7);
+
+            // visitar el árbol aquí
+            SumVisitor visitorp = new SumVisitor();
+            MaxAgeVisitor maxAgeVisitor = new MaxAgeVisitor();
+            p1.Accept(visitorp);
+            p1.Accept(maxAgeVisitor);
+            Console.WriteLine($"Suma de edades: {visitorp.Sum}");
+            Console.WriteLine($"Edad maxima: {maxAgeVisitor.MaxAge}");
         }
     }
 }
