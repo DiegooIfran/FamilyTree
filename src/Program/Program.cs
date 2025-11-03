@@ -48,8 +48,11 @@ namespace Program
 
             // visitar el árbol aquí
             SumVisitor visitorp = new SumVisitor();
+            MaxAgeVisitor maxAgeVisitor = new MaxAgeVisitor();
             p1.Accept(visitorp);
+            p1.Accept(maxAgeVisitor);
             Console.WriteLine($"Suma de edades: {visitorp.Sum}");
+            Console.WriteLine($"Edad maxima: {maxAgeVisitor.MaxAge}");
         }
     }
 }
