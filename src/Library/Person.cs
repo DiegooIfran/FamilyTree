@@ -22,7 +22,7 @@ public class Person
         }
     }
 
-    public ReadOnlyCollection<Node> Children {
+    public ReadOnlyCollection<Person> Children {
         get
         {
             return this.children.AsReadOnly();
@@ -35,7 +35,7 @@ public class Person
         this.name = name;
     }
 
-    public void AddChildren(Node n)
+    public void AddChildren(Person n)
     {
         this.children.Add(n);
     }
